@@ -1,35 +1,62 @@
-﻿/* reset */
+﻿/**
+*  @author       hehongwei44@126.com
+*  @link         http://nec.netease.com/.
+*  @description  通用样式可分为两个模块，一个是重置浏览器的默认样式，一个是提供一些通用的样式。
+*  @description  在nec-reset.css上进行二次开发。
+*  @description  根据自己的需求进行定制。
+*
+**/
+
+/*-------------------------------重置浏览器默认样式------------------------------*/
 html, body, h1, h2, h3, h4, h5, h6, div, dl, dt, dd, ul, ol, li, p,
 blockquote, pre, hr, figure, table, caption, th, td, form, fieldset,
 legend, input, button, textarea, menu {
-    margin: 0;
-    padding: 0;
+    margin: 0;  /*清除外边距*/
+    padding: 0; /*清楚内边距*/
 }
-
+/*html5中的新增标签*/
 header, footer, section, article, aside, nav, hgroup, address, figure, figcaption, menu, details {
-    display: block;
+    display: block; /*让不支持html5的浏览器识别*/
 }
-
+/*表格标签*/
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
+    border-collapse: collapse;  /* 用来设定表格的行和列的边框是合并成单边框，还是分别有各自的边框 */
+    border-spacing: 0;  /* 设置相邻单元格的边框间的距离 */
 }
-
+/*
+ * @caption : 定义表格标题
+ * @th     : 定义表格内的表头单元格
+ * */
 caption, th {
-    text-align: left;
-    font-weight: normal;
+    text-align: left;   /* 规定元素中的文本的水平对齐方式 */
+    font-weight: normal;    /* 属性设置文本的粗细 */
 }
-
+/*
+ * fieldset :  标签将表单内容的一部分打包，生成一组相关表单的字段
+ * iframe   :  创建包含另外一个文档的内联框架（即行内框架）
+ * abbr     :  通过对缩写词语进行标记，您就能够为浏览器、拼写检查程序、翻译系统以及搜索引擎分度器提供有用的信息。
+ * */
 html, body, fieldset, img, iframe, abbr {
     border: 0;
 }
-
+/*
+ *  i        :  显示斜体文本效果
+ *  cite     :  标签定义作品（比如书籍、歌曲、电影、电视节目、绘画、雕塑等等）的标题
+ *  em       :  标签告诉浏览器把其中的文本表示为强调的内容
+ *  var      :  标签是计算机文档中应用的另一个小窍门，这个标签经常与 <code> 和 <pre> 标签一起使用，用来显示计算机编程代码范例及类似方面的特定元素
+ *  address  :  定义一个地址（比如电子邮件地址）。您应当使用它来定义地址、签名或者文档的作者身份
+ *  dfn      : 标签可标记那些对特殊术语或短语的定义
+ * 
+ **/
 i, cite, em, var, address, dfn {
     font-style: normal;
 }
-
+/*
+ * [hidefocus] : 即隐藏聚焦，具有使对象聚焦失效的功能，如果没有hideFocus,那么鼠标点击该超链接，则外面出现一个虚线框，即为聚焦。而使用了hideFocus则不会有虚线框。 
+ * summary     : 标签包含 details 元素的标题，"details" 元素用于描述有关文档或文档片段的详细信息,是html5中新增的元素
+ * */
 [hidefocus], summary {
-    outline: 0;
+    outline: 0; /*是绘制于元素周围的一条线，位于边框边缘的外围，可起到突出元素的作用*/
 }
 
 li {
@@ -39,26 +66,38 @@ li {
 h1, h2, h3, h4, h5, h6, small {
     font-size: 100%;
 }
-
+/*
+ * sup : 包含在 <sup> 标签和其结束标签 </sup> 中的内容将会以当前文本流中字符高度的一半来显示，但是与当前文本流中文字的字体和字号都是一样的。(上标)
+ * sub : 包含在 <sub> 标签和其结束标签 </sub> 中的内容将会以当前文本流中字符高度的一半来显示，但是与当前文本流中文字的字体和字号都是一样的。(下标)
+ * 
+ * */
 sup, sub {
     font-size: 83%;
 }
-
+/*
+ * pre  : 元素可定义预格式化的文本,被包围在 pre元素中的文本通常会保留空格和换行符,而文本也会呈现为等宽字体。
+ * code : 标签用于表示计算机源代码或者其他机器可以阅读的文本内容
+ * kbd  : 标签定义键盘文本
+ * samp : 标签表示一段用户应该对其没有什么其他解释的文本字符。要从正常的上下文抽取这些字符时，通常要用到这个标签。
+ * 
+ * */
 pre, code, kbd, samp {
-    font-family: inherit;
+    font-family: inherit;   /*继承父类的字体*/
 }
-
+/*
+ * q : 标签定义短的引用,浏览器经常在引用的内容周围添加引号。
+ * */
 q:before, q:after {
-    content: none;
+    content: none;  /*content 属性与 :before 及 :after 伪元素配合使用，来插入生成内容。*/
 }
-
+/*定义多行的文本输入控件*/
 textarea {
-    overflow: auto;
-    resize: none;
+    overflow: auto; /*在需要的时候添加滚动条,scroll则会产生水平和垂直滚动条*/
+    resize: none;   /*不允许调整元素的大小*/  
 }
-
+/*label:标签*/
 label, summary {
-    cursor: default;
+    cursor: default;    /*default:箭头,pointer:手型*/
 }
 
 a, button {
@@ -68,13 +107,20 @@ a, button {
 h1, h2, h3, h4, h5, h6, em, strong, b {
     font-weight: bold;
 }
-
+/*
+ * del : 　定义文档中已被删除的文本
+ * ins : 已经被插入文档中的文本
+ * u   : 定义下划线文本
+ * s   : 定义加删除线文本定义
+ * */
 del, ins, u, s, a, a:hover {
-    text-decoration: none;
+    text-decoration: none;  /*不加下划线*/
 }
-
+/*
+ * keygen 用于表单的密钥对生成器字段(html5新增元素)
+ * */
 body, textarea, input, button, select, keygen, legend {
-    font: 12px/1.14 arial, \5b8b\4f53;
+    font: 12px/1.14 arial, '\5b8b\4f53';    /*ps:中文字体统一用utf编码代替,并且加上引号 \5b8b\4f53->宋体 */
     color: #333;
     outline: 0;
 }
@@ -84,5 +130,54 @@ body {
 }
 
 a, a:hover {
-    color: #333;
+    color: #333;    /*根据设计师的设计进行定制*/
+}
+input::-ms-clear {
+ display: none; /*去掉input中的叉叉*/
+}     
+input::-ms-reveal { 
+    display: none; 
+/*去掉密码框中的小眼睛*/}    
+/*-------------------------------通用样式------------------------------*/
+/*清除浮动*/
+.f-cb:after {
+    display: block;
+    clear: both;
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+    content: "";
+}
+.f-cb {
+    zoom: 1;
+}
+.f-ib {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+.f-fl {
+    float: left;
+}
+.f-fr {
+    float: right;
+}
+.f-dn{
+    display:none;
+}
+.f-db{
+    display:block;
+}
+.f-fwn{
+    font-weight:normal;
+}
+.f-fwb{
+    font-weight:bold;
+}
+.f-ff0 {
+    font-family: arial, '\5b8b\4f53'; /*宋体*/
+}
+
+.f-ff1 {
+    font-family: "Microsoft YaHei", '\5fae\8f6f\96c5\9ed1', arial, '\5b8b\4f53'; /*微软雅黑*/
 }
